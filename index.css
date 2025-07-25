@@ -21,19 +21,11 @@ body{
     align-items: center;
     
 }
-.menuContainer{
-    width: 30%;
+.titleContainer{
+    width: 100%;
     height: 100%;
     display: flex;
     justify-content: center;
-    align-items: center;
-    
-}
-.titleContainer{
-    width: 70%;
-    height: 100%;
-    display: flex;
-    justify-content: flex-start;
     align-items: center;
 
 }
@@ -95,6 +87,7 @@ body{
     height: 100%;
     display: flex;
     flex-direction: column;
+    align-items: center;
     
 }
 /*-------------------------------------------------------------------*/
@@ -108,7 +101,66 @@ body{
     font-weight: 900;
     display: flex;
     align-items: center;
+    justify-content: center;
     margin-top: 10px ;
     border-radius: 10px;
     padding-left: 10px;
 }
+
+
+/*Responsive Desing*/
+@media (max-width: 480px) { 
+
+    .titleContainer{
+        font-size: 0.7rem;
+    }
+    .buttonGenerator{
+
+        height: 40%;
+        font-size: 1rem;        
+    }
+    .password{
+        height: 10%;
+        font-size: 0.9rem;
+    }
+    
+}  
+@media (min-width: 481px) and (max-width: 640px) {  
+.titleContainer{
+        font-size: 0.8rem;
+    }
+    .buttonGenerator{
+
+        height: 40%;
+        font-size: 1rem;        
+    }
+    .password{
+        height: 10%;
+        font-size: 1rem;
+    }
+}   
+@media (min-width: 641px) and (max-width: 768px) {  
+
+    .titleContainer{
+        font-size: 0.8rem;
+    }
+    .buttonGenerator{
+
+        height: 40%;
+        font-size: 1rem;        
+    }
+    .password{
+        height: 10%;
+        font-size: 1rem;
+    }
+}   
+@media (min-width: 769px) and (max-width: 1024px) {  
+
+}  
+@media (min-width: 1025px) and (max-width: 1280px) {  
+
+} 
+@media (min-width: 1281px) and (max-width: 1536px) { 
+
+ } 
+@media (min-width: 1537px) {  }  
