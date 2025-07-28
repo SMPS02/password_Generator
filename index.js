@@ -223,12 +223,12 @@ function crearContraseña(){
 
 function copiarContraseña(){
 
-    if(contraseña.value = ""){
+    if(contraseña.textContent === ""){
         alert("No hay nada para copiar")
         return;
 
     }else{
-        navigator.clipboard.writeText(contraseña.value).then(()=>{    
+        navigator.clipboard.writeText(contraseña.textContent).then(()=>{    
         alert("Contraseña copiada")
     }).catch((err)=>{
         alert("Error en cargar la contraseña");
