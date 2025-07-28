@@ -1,68 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="index.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
     <title>PassWords Generator</title>
-</head>
-<body>
-
+  </head>
+  <body>
     <header class="heading">
-        
-        <div class="menuContainer">
-            <h1 class="menu">
-                
-            </h1>
-        </div>
-
-    <!------------------------------------------------------------------------------------------------------>
-    <!------------------------------------------------------------------------------------------------------>
-        
-        <div class="titleContainer">
-            <h1 class="title">
-                PassWord Generator
-            </h1>
-        </div>
-
+      <div class="titleContainer">
+        <h1 class="title">PassWord Generator</h1>
+      </div>
     </header>
 
-
     <!------------------------------------------------------------------------------------------------------>
     <!------------------------------------------------------------------------------------------------------>
     <!------------------------------------------------------------------------------------------------------>
 
-    <main class="principal">
-
-        <div class="buttonGeneratorContainer">
-            <button class="buttonGenerator" id="button">
-                Create Password
+    <main class="main">
+      <form action="generar contraseña" class="formulario">
+        <div class="cont-1">
+          <input
+            type="number"
+            min="4"
+            max="20"
+            value="8"
+            id="inputNumber"
+            class="numeroCaracteres"
+          />
+          <div class="inputText">
+            <p class="textHolder" id="textHolder"></p>
+            <button type="button" class="generador" id="generador">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-play play"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M10.804 8 5 4.633v6.734zm.792-.696a.802.802 0 0 1 0 1.392l-6.363 3.692C4.713 12.69 4 12.345 4 11.692V4.308c0-.653.713-.998 1.233-.696z"
+                />
+              </svg>
             </button>
+          </div>
+          <button class="copiar" id="copiar" type="button">📋</button>
         </div>
 
-    <!------------------------------------------------------------------------------------------------------>
-    <!------------------------------------------------------------------------------------------------------>
+        <!------------------------------------------------------------------------------------------------------>
+        <!------------------------------------------------------------------------------------------------------>
 
-
-        <div class="formContainer">
-        <form action="" class="passwordsTopContainer">
-            <ul class="passwordsMainContainer" id="ul">
-                
-            </ul>
-        </form>
+        <div class="cont-2">
+          <label for="" class="label"><input type="checkbox" name="opcion" class="checkbox" value="abc" checked> abc</label>
+          <label for="" class="label"><input type="checkbox" name="opcion" class="checkbox" value="123"> 123</label>
+          <label for="" class="label"><input type="checkbox" name="opcion" class="checkbox" value="@%&"> @%&</label>
         </div>
-        
+      </form>
     </main>
 
-
     <!------------------------------------------------------------------------------------------------------>
     <!------------------------------------------------------------------------------------------------------>
     <!------------------------------------------------------------------------------------------------------>
-
-    
-
-
 
     <script src="index.js"></script>
-</body>
+  </body>
 </html>
