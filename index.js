@@ -6,6 +6,11 @@ const inputNumero = document.getElementById("inputNumber");
 let contraseña = document.getElementById("textHolder");
 const botonGenerador = document.getElementById("generador");
 const botonCopiar = document.getElementById("copiar");
+let contrasenasGuardadas = obtenerDelLocal();
+let guardarContrasena = contrasenasGuardadas || []
+
+const misContrasenas = document.getElementById("misContrasenas");
+const ul = document.getElementById("ul");
 
 //Arrays
 const alfabeto = [
@@ -34,8 +39,20 @@ checkBoxGroup.forEach(cb =>{
     })
 })
 
+//Local Storage (Codigo limpio)
+
+function agregarAlLocal(){
+    localStorage.setItem("contraseña", JSON.stringify(guardarContrasena));
+}
+
+function obtenerDelLocal(){
+
+    return JSON.parse(localStorage.getItem("contraseña"));
+}
 
 //Funcion(es)
+
+//Funcion para crear un numero random dependiendo de que arreglo lo solicite
 function numeroRandom(numero){
 
     switch(numero){
@@ -113,6 +130,7 @@ function numeroRandom(numero){
     // return numero
 }
 
+//Crear un contraseña dependiendo de las combinaciones
 function crearContraseña(){
 
     let contraseñaGenerada = "";
@@ -221,6 +239,7 @@ function crearContraseña(){
 
 }
 
+//Copiar la contraseña en el portapapeles
 function copiarContraseña(){
 
     if(contraseña.textContent === ""){
@@ -236,7 +255,65 @@ function copiarContraseña(){
     }
    
 }
+
+//Guardar contraseña en el localStorage
+function savePassword(e){
+
+    //Verificación para ver si hay alguna contraseña igual en el local Storage
     
+        const textIugal = guardarContrasena.some((PW) => PW.texto === contraseña.textContent);
+        if(textIugal){
+            alert("Esta contraseña ya existe en tus contraseñas")  
+            return;
+        }else if (contraseña.textContent === "") {
+            alert("No hay nada para guardar");
+            return;
+        }
+
+    const contrasenaGuardada = {
+
+        texto: contraseña.textContent,
+        id: crypto.randomUUID()
+    }
+
+    guardarContrasena = [...guardarContrasena, contrasenaGuardada];
+    agregarAlLocal();
+    ul.innerHTML = "";
+    guardarContrasena.forEach(dibujarEnMisContrasenas);
+}
+
+//Funcion para ocultar/mostrar mis contraseñas
+function mostrarMisContrasenas (){
+
+    misContrasenas.classList.toggle("hidden-1");
+}
+
+//Dibujar las contraseñas guardadas en su contenedor correspondiente
+
+function dibujarEnMisContrasenas({texto, id}){
+
+    ul.innerHTML +=
+    ` <li class="CG" id="${id}">
+              <p class="textoCG">
+                ${texto}
+              </p>
+              <button class="btnCG">
+                Eliminar
+              </button>
+            </li>`
+}
+    
+//Eliminar la contraseña correspondiente
+function eliminarPassWord(e){
+    const liID = e.target.parentElement.id;
+    guardarContrasena = guardarContrasena.filter((PW) => PW.id != liID);
+
+    ul.innerHTML = ""
+    agregarAlLocal();
+    guardarContrasena.forEach(dibujarEnMisContrasenas);
+
+
+}
     
 //Eventos
 
@@ -252,5 +329,27 @@ document.addEventListener("click", (e)=>{
     if(e.target.classList.contains("copiar")){
         copiarContraseña();
     }
-    console.log(e.target);
+
+    //Guardar contraseña
+    if(e.target.classList.contains("guardarPassword")){
+
+        savePassword(e);
+    }
+
+    //Mostrar y ocultar mis contraseñas
+    if(e.target.classList.contains("contraContainer-1") || e.target.classList.contains("textPass")){
+        mostrarMisContrasenas();
+    }
+
+    //Eliminar contraseña
+    if(e.target.classList.contains("btnCG")){
+        eliminarPassWord(e);
+    }
+    
+
+})
+
+window.addEventListener("DOMContentLoaded", () =>{
+    
+    contrasenasGuardadas.forEach(dibujarEnMisContrasenas);
 })

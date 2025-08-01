@@ -20,13 +20,85 @@ body{
     height: 10vh;
     background-color: var(--blanco);
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
 
 }
 .title{
     font-size: 3rem;
 }
+.contrasenasContainer{
+    width: 20%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    border: 2px solid var(--negro);
+    border-radius: 5px;
+    margin-top: 10px;
+    position: relative;
+    /* background-color: var(--negro); */
+
+}
+.contraContainer-1{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.cajita{
+    width: 40px;
+    height: 40px;
+    margin-right: 5px;
+}
+.textPass{
+    font-size: 1.5rem;
+    font-weight: 700;
+
+}
+.contraContainer-2{
+    width: 200%;
+    height: 80vh;
+    border:2px solid red;
+    background-color: black;
+    border-radius: 10px;
+    position: absolute;
+    top: 77px;
+    left: 0;
+    padding: 10px;
+}
+.CG{
+
+    width: 100%;
+    height: 40px;
+    background-color: white;
+    color: var(--negro);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    margin-top: 5px;
+    border-radius: 5px;
+
+}
+.ul{
+    width: 100%;
+    height: 100%;
+}
+.textoCG{
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+.btnCG{
+
+    border: 1px solid black;
+    width: 20%;
+    height: 30px;
+    border-radius: 7px;
+    font-weight: 900;
+    color: red;
+}
+
 
 /*Apartado del main o contenido principal*/
 .main{
@@ -37,7 +109,7 @@ body{
 }
 .formulario{
     width: 100%;
-    height: 60%;
+    height: 70%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -45,7 +117,7 @@ body{
 }
 .cont-1{
     width: 100%;
-    height: 50%;
+    height: 40%;
     display: flex;
     align-items: flex-end;
     justify-content: center;
@@ -53,12 +125,29 @@ body{
 }
 .cont-2{
     width: 20%;
-    height: 50%;
+    height: 40%;
     display: flex;
     align-items: flex-start;
     justify-content: space-around;
     gap: 5px;
     margin-top: 5px;
+}
+.cont-3{
+
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    padding-top: 2px;
+}
+.guardarPassword{
+    width: 200px;
+    height: 40px;
+    border: 2px solid var(--negro);
+    border-radius: 5px;
+    background-color: var(--blanco);
+    font-size: 1rem;
+    font-weight: 900;
 }
 .checkbox{
     width: 30px;
@@ -122,6 +211,11 @@ body{
     width: 40px;
     height: 40px;
 }
+
+
+
+
+/*Pseudo Clases*/
 .generador:hover{
     background-color: rgb(72, 230, 85);
     cursor: pointer;
@@ -137,4 +231,23 @@ body{
 }.checkbox:hover{
     cursor: pointer;
    
+}
+.guardarPassword:hover{
+
+    background-color: cadetblue;
+    cursor: pointer;
+}
+.contraContainer-1:hover{
+
+    background-color:cadetblue;
+    cursor: pointer;
+}
+.btnCG:hover{
+    background-color: cadetblue;
+    cursor: pointer;
+}
+
+/*Clases especiales*/
+.hidden-1{
+    display: none;
 }
