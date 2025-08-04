@@ -76,7 +76,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 20px;
+    padding: 10px;
     margin-top: 5px;
     border-radius: 5px;
 
@@ -103,13 +103,13 @@ body{
 /*Apartado del main o contenido principal*/
 .main{
     width: 100%;
-    height: 50vh;
+    height: 70vh;
     background-color: white;
     margin-top: 2px;
 }
 .formulario{
     width: 100%;
-    height: 70%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -117,7 +117,7 @@ body{
 }
 .cont-1{
     width: 100%;
-    height: 40%;
+    height: 20%;
     display: flex;
     align-items: flex-end;
     justify-content: center;
@@ -125,11 +125,11 @@ body{
 }
 .cont-2{
     width: 20%;
-    height: 40%;
+    height: 7%;
     display: flex;
     align-items: flex-start;
-    justify-content: space-around;
-    gap: 5px;
+    justify-content: center;
+    column-gap: 80px;
     margin-top: 5px;
 }
 .cont-3{
@@ -139,6 +139,15 @@ body{
     display: flex;
     justify-content: center;
     padding-top: 2px;
+}
+.cont-4{
+    width: 100%;
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
 }
 .guardarPassword{
     width: 200px;
@@ -163,7 +172,7 @@ body{
 
 .numeroCaracteres{
     width: 4%;
-    height: 50%;
+    height: 60%;
     padding: 3px;
     font-size: 1.1rem;
     font-weight: 900;
@@ -171,7 +180,7 @@ body{
 }
 .inputText{
     width: 40%;
-    height: 50%;
+    height: 60%;
     font-size: 2rem;
     border: 2px solid black;
     display: flex;
@@ -181,7 +190,7 @@ body{
 }
 .copiar{
     width: 4%;
-    height: 50%;
+    height: 60%;
     padding: 10px;
     background-color: var(--blanco);
     border: 2px solid black;
@@ -212,7 +221,99 @@ body{
     height: 40px;
 }
 
+.persGenerator{
 
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+}
+.persElements{
+
+    width: 100%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+
+
+}
+.persPassword{
+    width: 15%;
+    height: 100%;
+    border-radius: 5px;
+    border: 2px solid var(--negro);
+    outline: none;
+    font-size: 1rem;
+    font-weight: 700;
+}
+.persInput{
+    width: 30%;
+    height: 25%;
+    font-size: 1.5rem;
+    font-weight: 900;
+}
+.persSave{
+    width: 20%;
+    height: 20%;
+    border: 2px solid var(--negro);
+    outline: none;
+    margin-top: 10px;
+    border-radius: 5px;
+    font-weight: 900;
+}
+.liPers{
+    width: 100%;
+    height: 40px;
+    background-color: aqua;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px double purple;
+
+}
+.divPers{
+    width: 60%;
+    height: 80%;
+    display: flex;
+    align-items: center;
+    padding-left: 2px;
+}
+.textoPers{
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+.persLabel{
+    width: 45%;
+    height: 130%;
+    background-color: RED;
+    color: black;
+    border-radius: 15px;
+    margin-left: 1px;
+    text-align: center;
+    font-weight: 900;
+    margin-bottom: 15px;
+}
+.divElPers{
+    width: 40%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+.btnPers{
+    width: 50%;
+    height: 30px;
+    color: red;
+    border: 1px solid var(--negro);
+    border-radius: 10px;
+    font-weight: 900;
+
+}
 
 
 /*Pseudo Clases*/
@@ -245,6 +346,20 @@ body{
 .btnCG:hover{
     background-color: cadetblue;
     cursor: pointer;
+}
+.btnPers:hover{
+    background-color: cadetblue;
+    cursor: pointer;
+}
+.persPassword:hover{
+
+    cursor: pointer;
+    background-color: cadetblue;
+}
+.persSave:hover{
+
+    cursor: pointer;
+    background-color: cadetblue;
 }
 
 /*Clases especiales*/
